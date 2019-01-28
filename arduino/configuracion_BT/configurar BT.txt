@@ -1,0 +1,18 @@
+Correr programa "configuracion_BT", luego desconectar la alimentación del modulo bluetooth y manteniendo pulsado el boton integrado por 5 segundos 
+conectar la alimentación del modulo. Se puede ver que el led integrado parpadea a menor frecuencia esto indica que el modulo se encuentra en 
+modo configuración!, ahora desde monitor serial se pueden enviar comandos AT para configurar el modulo a nuestro gusto y necesidades.
+Abrir el monitor serial y fijar Autoscroll; Ambos NL & CR; 9600 bps.
+Para el modulo usado se configuró de la siguiente forma:
+AT
+AT+NAME=HC-05
+AT+PSWD=1234
+AT+UART=115200,0,0
+Para confirmar que se realizó la configuración se deben escribir por puerto serial los comandos sin lo que esta despues del "=":
+AT+NAME
+AT+PSWD
+AT+UART
+Cada comando enviado se recibe instantaneamente una respuesta que corresponde a la configuración de dicho registro.
+Una vez confirmadas las configuraciones y se esté listo para comenzar a comunicarse con el dispositivo android "modo usuario", 
+ se debe salir del modo configuración enviando el comando AT+RESET. Ahora se puede ver al LED parpadear mas rapidamente, esto indica que el modulo
+se encuentra en modo usuario. Se deben cambiar los pines de conexion a TX y RX de arduino (0 y 1 respectivamente) y correr el programa
+que se necesite para enviar información por el bluetooth, en este caso seria el programa "ads129x_driver".
