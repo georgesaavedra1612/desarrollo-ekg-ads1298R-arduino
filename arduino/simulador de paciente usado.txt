@@ -1,0 +1,5 @@
+
+Las señales de ECG fueron generadas con un simulador de multiparametros marca Fluke modelo mps450, este será configurado para generar todo tipo de señales,
+las cuales deberían ser leidas correctamente con el programa ads129x_driver. Las pruebas de funcionamiento comprendern la lectura de señales generadas 
+a distintas amplitudes, con problemas morfologicos, problemas arritmicos y de distintas frecuencias. 
+
